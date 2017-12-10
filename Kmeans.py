@@ -25,6 +25,8 @@ class KMeans:
         centroids = randomX[0:K, :]
         idx = self.findClosetCentroids(centroids)
         jSumMin = self.cosFunc(idx,centroids)
+        #Random intial and choose the best begin Centroids with lowest cost function value J
+        for i in range(100):
             randomX = random.permutation(self.data)
             tempCentroids = randomX[0:K, :]
             idx = self.findClosetCentroids(tempCentroids)
