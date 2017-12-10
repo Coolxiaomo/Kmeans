@@ -25,7 +25,6 @@ class KMeans:
         centroids = randomX[0:K, :]
         idx = self.findClosetCentroids(centroids)
         jSumMin = self.cosFunc(idx,centroids)
-        for i in range(1000):
             randomX = random.permutation(self.data)
             tempCentroids = randomX[0:K, :]
             idx = self.findClosetCentroids(tempCentroids)
@@ -99,5 +98,7 @@ if __name__=='__main__':
         labeled_City[int(idx[i])].append([U.dataName[i]])
     for i in range(4):
         print(labeled_City[i])
-    #U.jCostPlot(10)
+    '''If want to see the cost function value change accompanied with K value, use the
+        U.jCostPlot(K_Num), K_Num is the classification numbers , u can choose 10 to see what
+        will plot out. According to eblow methond, u can find the best classification numbers.
 
